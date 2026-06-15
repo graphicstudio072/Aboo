@@ -1,0 +1,67 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        gold: {
+          50: '#FFFBEB',
+          100: '#FEF3C7',
+          200: '#FDE68A',
+          300: '#FCD34D',
+          400: '#FBBF24',
+          500: '#F4B400',
+          600: '#D97706',
+          700: '#B45309',
+          800: '#92400E',
+          900: '#78350F',
+        },
+        dark: {
+          50: '#F0EDE8',
+          100: '#D4CFC7',
+          200: '#A8A09A',
+          300: '#7C746E',
+          400: '#504942',
+          500: '#1E1E2E',
+          600: '#16162A',
+          700: '#12121A',
+          800: '#0E0E14',
+          900: '#0A0A0F',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.6s ease-out',
+        'slide-down': 'slideDown 0.3s ease-out',
+        'scale-in': 'scaleIn 0.3s ease-out',
+        'shimmer': 'shimmer 2s infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'gradient': 'gradientShift 8s ease infinite',
+      },
+      keyframes: {
+        fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
+        slideUp: { from: { opacity: '0', transform: 'translateY(30px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+        slideDown: { from: { opacity: '0', transform: 'translateY(-10px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+        scaleIn: { from: { opacity: '0', transform: 'scale(0.95)' }, to: { opacity: '1', transform: 'scale(1)' } },
+        shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+        glow: { from: { textShadow: '0 0 10px #F4B400, 0 0 20px #F4B400' }, to: { textShadow: '0 0 20px #F4B400, 0 0 40px #F4B400, 0 0 60px #F4B400' } },
+        gradientShift: { '0%,100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } },
+      },
+      backgroundSize: { '300%': '300%' },
+      backdropBlur: { xs: '2px' },
+      boxShadow: {
+        'gold': '0 0 20px rgba(244, 180, 0, 0.3)',
+        'gold-lg': '0 0 40px rgba(244, 180, 0, 0.4)',
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
+        'card': '0 4px 24px rgba(0, 0, 0, 0.4)',
+      },
+    },
+  },
+  plugins: [],
+};
