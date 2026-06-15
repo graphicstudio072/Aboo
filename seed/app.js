@@ -112,11 +112,26 @@ app.get('/api/stats', async (req, res, next) => {
   } catch (error) { next(error); }
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Sahityotsav API is running');
+});
+
 // Health check
-app.get('/health', (req, res) => res.json({ status: 'OK', timestamp: new Date() }));
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'OK',
+    timestamp: new Date()
+  });
+});
 
 // 404
-app.use((req, res) => res.status(404).json({ success: false, message: 'Route not found' }));
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: 'Route not found'
+  });
+});
 
 // Error handler
 app.use(errorHandler);
